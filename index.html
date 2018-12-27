@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Work</title>
+        <link href="styles/jquery-ui.css" rel="stylesheet" type="text/css">
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header></header>
+        <div class="container"  id="app">
+            <div class="aside">
+                <filters 
+                    :cities="cities" 
+                    :categories="categories" 
+                    :cards="cards" 
+                    :selected-city="selectedCity"
+                >
+                </filters>        
+            </div>
+            <div class="content">
+                <cards 
+                    :cities="cities" 
+                    :categories="categories" 
+                    :cards="cards" 
+                    :selected-city="selectedCity"
+                >
+                </cards>
+            </div>
+        </div>
+        <footer></footer>
+        <script src="scripts/lib/vue.js"></script>
+        <script src="scripts/lib/jquery-12.4.js"></script>
+        <script src="scripts/lib/jquery-ui.js"></script>
+        <script src="data/city.js"></script>
+        <script src="data/category.js"></script>
+        <script src="data/data.js"></script>
+        <script src="scripts/components/cities.js"></script>
+        <script src="scripts/components/prices.js"></script>
+        <script src="scripts/components/categories.js"></script>
+        <script src="scripts/components/filters.js"></script>
+        <script src="scripts/components/cards.js"></script>
+        <script src="scripts/app.js" ></script>
+    </body>
+</html>

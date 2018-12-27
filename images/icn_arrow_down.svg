@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 7" width="11" height="7">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #33363e } 
+	</style>
+	<path id="icn_arrow_down copy" class="shp0" d="M9.83,1l-3.83,3.73l-3.83,-3.73l-1.17,1.14l5,4.86l5,-4.86z" />
+</svg>
