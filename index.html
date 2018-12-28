@@ -14,6 +14,11 @@
                     :categories="categories" 
                     :cards="cards" 
                     :selected-city="selectedCity"
+                    @update:selected-city="selectedCity = $event"
+                    :selected-categories="selectedCategories"
+                    @update:selected-categories="selectedCategories = $event"
+                    :selected-prices="selectedPrices"
+                    @update:selected-prices="selectedPrices = $event"
                 >
                 </filters>        
             </div>
@@ -21,8 +26,7 @@
                 <cards 
                     :cities="cities" 
                     :categories="categories" 
-                    :cards="cards" 
-                    :selected-city="selectedCity"
+                    :cards="cardsFiltered" 
                 >
                 </cards>
             </div>

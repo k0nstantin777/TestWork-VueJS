@@ -5,16 +5,28 @@
 	font-style: normal;
 }
 
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    height: 100%; 
+}
+
 body{ 
     font-size: 14px; 
     font-family: 'Montserrat', sans-serif; 
     width: 100%; 
-    height: 100%; 
     margin: 0;
-     font-weight: 300;
+    font-weight: 300;
 	word-wrap: break-word; 
     background: #FFF;
     color: #555; 
+}
+
+div{
+    box-sizing: border-box;
 }
 
 header, footer{
@@ -22,15 +34,24 @@ header, footer{
     background-color: #ccc;
 }
 
+header{
+    margin-bottom: -100px;
+}
+
+footer{
+    margin-top: -100px;
+}
+
 .container{
     display: flex;
-    padding: 30px 60px 50px 60px;
+    padding: 130px 60px 150px 60px;
     max-width: 1096px;
     margin: auto;
+    min-height: 100%;
 }
 
 .aside{
-    flex-basis: 20%;
+    flex-basis: 25%;
     padding-right: 5%;
     min-width: 200px;
     max-width: 250px;
@@ -38,6 +59,7 @@ header, footer{
 
 .content{
     flex-basis:75%;
+    margin: 0 auto;
 }
 
 /******** FILTERS **********/
@@ -185,10 +207,9 @@ header, footer{
 
 /******** CARDS **********/
 
-.cards{
+.cards > :first-child{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .cards.card-item{
@@ -200,8 +221,8 @@ header, footer{
     -ms-transition: box-shadow 0.3s ease-in-out 0s;
     transition: box-shadow 0.3s ease-in-out 0s; 
     margin-bottom: 3%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 3%;
 }
 
 .cards.card-item:hover{
@@ -297,3 +318,19 @@ header, footer{
 @media only screen and (max-width: 479px){
 
 }
+/********* END RESPONSIVE *************/
+
+/********* ANIMATION *************/
+
+.list-enter-active, .list-leave-active {
+    transition: opacity 1s;
+}
+.list-enter /* .list-leave-active до версии 2.1.8 */ {
+    opacity: 1;
+    
+}
+
+.list-leave-to {
+    opacity: 0;
+}
+/********* END ANIMATION *************/
