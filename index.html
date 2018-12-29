@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <title>Test Work</title>
         <link href="styles/jquery-ui.css" rel="stylesheet" type="text/css">
@@ -10,13 +10,12 @@
         <div class="container"  id="app">
             <div class="aside">
                 <filters 
-                    :cities="cities" 
+                    v-bind:cities="cities" 
                     :categories="categories" 
                     :cards="cards" 
                     :selected-city="selectedCity"
                     @update:selected-city="selectedCity = $event"
                     :selected-categories="selectedCategories"
-                    @update:selected-categories="selectedCategories = $event"
                     :selected-prices="selectedPrices"
                     @update:selected-prices="selectedPrices = $event"
                 >

@@ -1,6 +1,4 @@
-Vue.config.devtools = true
-
-let app = new Vue({
+const app = new Vue({
     el: '#app',
     data: {
         cities: City,
@@ -37,22 +35,11 @@ let app = new Vue({
             }
             return cards;
         },
-        initPrices: function(){
-            let prices = [];
-            this.cards.forEach(card => {
-                if(!prices.length){ 
-                    prices = [card.price, card.price];  
-                    return;
-                }
-                if(card.price < prices[0]){
-                    prices[0] = card.price;     
-                }
-                if(card.price > prices[1]){
-                    prices[1] = card.price;     
-                }
-            });
-            return prices;
-        },
+        initFilters: function(){
+            this.selectedCity = JSON.parse(localStorage.getItem('selectedCity')) || 0;
+            this.selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
+            this.selectedPrices = JSON.parse(localStorage.getItem('selectedPrices')) || [];
+        }
     },
     computed: {
         cardsFiltered: function(){
@@ -63,7 +50,18 @@ let app = new Vue({
             return cards;
         },
     },
-    beforeMount: function(){
-        this.selectedPrices = this.initPrices();
-    }
-})
+    watch:{
+        selectedCity: function(newValue){
+            localStorage.setItem('selectedCity', JSON.stringify(newValue));
+        }, 
+        selectedCategories: function(newValue){
+            localStorage.setItem('selectedCategories', JSON.stringify(newValue));
+        },
+        selectedPrices: function(newValue){
+            localStorage.setItem('selectedPrices', JSON.stringify(newValue));
+        }   
+    },
+    created: function(){
+        this.initFilters();
+    }, 
+});

@@ -45,7 +45,7 @@ footer{
 .container{
     display: flex;
     padding: 130px 60px 150px 60px;
-    max-width: 1096px;
+    max-width: 1200px;
     margin: auto;
     min-height: 100%;
 }
@@ -53,7 +53,7 @@ footer{
 .aside{
     flex-basis: 25%;
     padding-right: 5%;
-    min-width: 200px;
+    min-width: 220px;
     max-width: 250px;
 }
 
@@ -300,8 +300,6 @@ footer{
 /********* END HELPERS CLASS **********/
 
 /********* RESPONSIVE *************/
-
-
 @media only screen and (max-width: 992px){
     .cards.card-item{
         flex-basis: 45%;
@@ -314,23 +312,19 @@ footer{
         flex-basis: 60%;
     }
 }
-
-@media only screen and (max-width: 479px){
-
-}
 /********* END RESPONSIVE *************/
 
 /********* ANIMATION *************/
 
 .list-enter-active, .list-leave-active {
-    transition: opacity 1s;
+    transition: all 2s;
 }
 .list-enter /* .list-leave-active до версии 2.1.8 */ {
-    opacity: 1;
-    
+    opacity: 0;
 }
 
 .list-leave-to {
     opacity: 0;
 }
+
 /********* END ANIMATION *************/
